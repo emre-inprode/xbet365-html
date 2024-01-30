@@ -1,4 +1,4 @@
-# Betx360 Copy - HTML & Tailwindcss
+# xBetx365 - HTML & Tailwindcss
 
 **Final Distribution Folder** : dist<br>
 **Source Folder** : src
