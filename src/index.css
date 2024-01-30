@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-sm;
+    @apply text-pink-500;
+    @apply bg-pink-500;
+  }
+}
+
+:root {
+  /* Navigation Variables */
+  --navigation-bar-height: 48px;
+  /* General Colors */
+  --theme-g: #ffffff;
+  --theme-g-live: #ffdf1b;
+  /* Color Set 1 */
+  --theme-cs1: #000000;
+  --theme-cs1-10: #333;
+  --theme-cs1-11: #444;
+  --theme-cs1-12: #474747;
+  --theme-cs1-15: #545454;
+  --theme-cs1-16: #585858;
+  --theme-cs1-20: #666666;
+  --theme-cs1-30: #757575;
+  --theme-cs1-35: #a7a7a7;
+  --theme-cs1-40: #bbb;
+  --theme-cs1-50: #ccc;
+  --theme-cs1-60: #ddd;
+  --theme-cs1-70: #e4e4e4;
+  /* Color Set 2 */
+  --theme-cs2: #14805e;
+  --theme-cs2-10: #4acfa5;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+  border-left: 1px solid #333;
+}
+::-webkit-scrollbar:horizontal {
+  height: 10px;
+  border-left: 0;
+}
+::-webkit-scrollbar-thumb {
+  cursor: pointer;
+  border-radius: 10px;
+  background-color: rgba(156, 156, 156, 0.5);
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:horizontal {
+  background-color: rgba(156, 156, 156, 0.5);
+  border-radius: 10px;
+  border: 1px solid transparent;
+}
+::-webkit-scrollbar-track {
+  background-color: #505050;
+  border-left: 1px solid #333;
+}
+::-webkit-scrollbar-track:horizontal {
+  background-color: transparent;
+  border-left: 0;
+}
+
+/* Custom Tailwind class for height */
+.h-with-no-navbar {
+  height: calc(100svh - var(--navigation-bar-height));
+}

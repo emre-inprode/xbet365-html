@@ -1,0 +1,27 @@
+<svg viewBox="0 0 48 52" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <mask id="c" x="0" y="0" width="48" height="36" fill="#fff">
+      <use xlink:href="#a"/>
+    </mask>
+    <mask id="d" x="0" y="0" width="48" height="36" fill="#fff">
+      <use xlink:href="#a"/>
+    </mask>
+    <mask id="e" x="0" y="0" width="34" height="17" fill="#fff">
+      <use xlink:href="#b"/>
+    </mask>
+    <mask id="f" x="0" y="0" width="34" height="17" fill="#fff">
+      <use xlink:href="#b"/>
+    </mask>
+    <path d="M24 3.714C27.874 3.64 30 0 30 0l6.554.997L48 13.685l-6.6 7.588L36 17v19H12V17l-5.387 4.273L0 13.68 11.377 1.238 18 0s2.126 3.79 6 3.714z" id="a"/>
+    <path id="b" d="m7 52 5-17h24l5 17H26.4L24 45.81 21.6 52z"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <path d="M24 3.714C27.874 3.64 30 0 30 0l6.554.997L48 13.685l-6.6 7.588L36 17v19H12V17l-5.387 4.273L0 13.68 11.377 1.238 18 0s2.126 3.79 6 3.714z" fill="#0A0A0A"/>
+    <path d="M32 .304V36h-5V2.881C28.957 1.786 30 0 30 0l2 .304zM21 2.948V36h-5V.374L18 0s1.043 1.86 3 2.948zM4.563 18.92 12 12V6.075L1.89 15.85l2.673 3.07zm41.479-2.983L36 6v6l7.369 7.01 2.673-3.073zM7 52l5-16h24l5 16H26.4L24 45.81 21.6 52z" fill="#F0F0F0"/>
+    <use stroke-opacity=".07" stroke="#FFF" mask="url(#c)" stroke-width="4" xlink:href="#a"/>
+    <use stroke="#272727" mask="url(#d)" stroke-width="2" xlink:href="#a"/>
+    <use stroke-opacity=".07" stroke="#FFF" mask="url(#e)" stroke-width="4" xlink:href="#b"/>
+    <use stroke="#272727" mask="url(#f)" stroke-width="2" xlink:href="#b"/>
+    <path d="M13 36h22v1H13v-1zm11 1h1v6h-1v-6zM34 7h1v10.818h-1V7zM13 7h1v10.818h-1V7z" fill="#000" opacity=".2"/>
+  </g>
+</svg>

@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BetX360 Copy - HTML & Tailwindcss</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <link href="index.css" rel="stylesheet" />
+  </head>
+
+  <script>
+    // Filling Dublications
+    window.onload = function () {
+      // Duplication of the defined divs
+      duplicateDiv("categorySoccer", 2);
+      duplicateDiv("categoryVirtualSoccer", 2);
+      duplicateDiv("categorySoccer", 2);
+      duplicateDiv("featuredFixt", 4);
+      duplicateDiv("liveEvent", 5);
+      duplicateDiv("soccerUpcomMatchesEvent", 3);
+      duplicateDiv("topCouponsLeague", 2);
+      duplicateDiv("virtualGame", 2);
+      duplicateDiv("betSlipItem", 1);
+      duplicateDiv("inPlayCategoryVirtualSoccer", 5);
+      duplicateDiv("sidebarCategoryItem", 18);
+    };
+
+    /**
+     * Div Duplicator for Testing
+     **/
+    function duplicateDiv(originalDivId, numberOfDuplicates) {
+      // Get the reference to the original div
+      var originalDiv = document.getElementById(originalDivId);
+
+      // Use a for loop to duplicate the div
+      for (var i = 0; i < numberOfDuplicates; i++) {
+        // Clone the original div
+        var clonedDiv = originalDiv.cloneNode(true);
+
+        // Append the cloned div to the parent div
+        originalDiv.parentNode.appendChild(clonedDiv);
+      }
+    }
+
+    function topFunction() {
+      document.getElementById("siteContent").scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      });
+    }
+  </script>
+
+  <script defer>
+    document.addEventListener("DOMContentLoaded", function () {
+      var menu = document.getElementById("menu");
+      var main = document.getElementById("main");
+      var site = document.getElementById("site");
+      var navBar = document.getElementById("navBar");
+      var siteContent = document.getElementById("siteContent");
+      var sidebar = document.getElementById("sidebar");
+      var menuSymbol = document.getElementById("menuSymbol");
+      var participants = document.querySelectorAll("#participant1, #participantX, #participant2");
+      var betSlip = document.getElementById("betSlip");
+      var betSlipCloseBut = document.getElementById("betSlipCloseBut");
+
+      /* Search Vars */
+      var sidebarSearch = document.getElementById("sidebarSearch");
+      var siteSearchCont = document.getElementById("siteSearchCont");
+      var siteSearchCloseBut = document.getElementById("siteSearchCloseBut");
+
+      menu.addEventListener("click", function () {
+        if (sidebar.classList.contains("-translate-x-full")) {
+          sidebar.classList.remove("-translate-x-full");
+          sidebar.classList.remove("opacity-0");
+          site.classList.toggle("translate-x-[80%]");
+          siteContent.classList.toggle("pointer-events-none");
+          siteContent.classList.toggle("touch-none");
+          menuSymbol.innerText = "close";
+        } else {
+          sidebar.classList.add("-translate-x-full");
+          sidebar.classList.add("opacity-0");
+          site.classList.toggle("translate-x-[80%]");
+          siteContent.classList.toggle("pointer-events-none");
+          siteContent.classList.toggle("touch-none");
+          menuSymbol.innerText = "menu";
+        }
+      });
+
+      sidebarSearch.addEventListener("click", function () {
+        siteSearchCont.classList.toggle("hidden");
+      });
+
+      siteSearchCloseBut.addEventListener("click", function () {
+        siteSearchCont.classList.toggle("hidden");
+      });
+
+      participants.forEach(function (participant) {
+        participant.addEventListener("click", function () {
+          betSlip.classList.toggle("translate-y-full");
+        });
+      });
+
+      betSlipCloseBut.addEventListener("click", function () {
+        betSlip.classList.toggle("translate-y-full");
+      });
+    });
+  </script>
+
+  <body class="bg-theme-cs1-12">
+    <div id="main" class="overflow-hidden">
+      <div id="site" class="transition duration-500 ease-in-out">
+        <!-- navigation bar starts -->
+        <div
+          id="navBar"
+          class="flex w-full bg-theme-cs2 text-theme-g text-nowrap h-navigation items-center text-center shadow-lg"
+        >
+          <div id="menu" class="flex flex-1 pl-3 items-center cursor-pointer">
+            <div id="menuSymbol" class="font-symbols text-theme-cs2-10 text-xl">menu</div>
+            <div class="m-1">Menu</div>
+          </div>
+
+          <div class="flex flex-1 m-1 justify-center items-center h-full">In-Play</div>
+          <div
+            class="flex flex-1 m-1 justify-center items-center border-b-[3px] border-theme-g-live h-full"
+          >
+            <img class="min-w-[70px] max-h-8 mx-auto" src="assets/logo_white.svg" />
+          </div>
+
+          <div class="flex flex-1 m-1 justify-center items-center">Join</div>
+          <div class="flex flex-1 m-1 justify-center items-center">Log In</div>
+        </div>
+        <!-- navigation bar ends -->
+
+        <div id="siteContent" class="h-with-no-navbar overflow-y-auto">
+          <!-- categories starts -->
+          <div
+            id="categories"
+            class="flex flex-row overflow-x-auto bg-theme-cs1-20 text-theme-cs1-50 text-xxs"
+          >
+            <!-- category soccer -->
+            <div
+              id="categorySoccer"
+              class="flex flex-col flex-none justify-between w-20 h-20 border-r border-theme-cs1-30"
+            >
+              <div id="catImage" class="flex grow items-center justify-center">
+                <div
+                  class="w-12 h-12 bg-no-repeat bg-[url('assets/category_icons.png')]"
+                  style="background-position: -3px -175px; background-size: 57px 5300px"
+                ></div>
+              </div>
+
+              <div id="catLabel" class="flex items-center justify-center h-8 leading-tight">
+                Soccer
+              </div>
+            </div>
+
+            <!-- category virtual soccer -->
+            <div
+              id="categoryVirtualSoccer"
+              class="flex flex-col flex-none justify-between w-20 h-20 border-r border-theme-cs1-30"
+            >
+              <div id="catImage" class="flex grow items-center justify-center">
+                <div
+                  class="w-12 h-12 bg-no-repeat bg-[url('assets/category_icons.png')]"
+                  style="background-position: -3px -4680px; background-size: 57px 5300px"
+                ></div>
+              </div>
+              <div
+                id="catLabel"
+                class="flex text-center items-center justify-center h-8 leading-tight"
+              >
+                Virtual Soccer
+              </div>
+            </div>
+          </div>
+          <!-- categories ends -->
+
+          <!-- various tables 1 starts -->
+          <div id="varTable1">
+            <div
+              id="header"
+              class="w-full h-8 bg-theme-cs2 flex flex-row justify-between p-3 items-center text-nowrap"
+            >
+              <div id="headerTitle" class="text-base text-theme-cs1-70 truncate">
+                Various Table 1
+              </div>
+            </div>
+
+            <div
+              id="fixtMarket"
+              class="flex flex-row bg-theme-cs1-16 text-sm text-theme-cs1-70 border-x border-y border-theme-cs1-30 divide-x divide-theme-cs1-30"
+            >
+              <div id="participant1" class="flex flex-row flex-1 h-11 justify-center items-center">
+                <div id="participantOppName">1</div>
+                <div id="participantOppOdds" class="text-theme-g-live ml-2">8.65</div>
+              </div>
+              <div id="participantX" class="flex flex-row flex-1 h-11 justify-center items-center">
+                <div id="participantOppName">X</div>
+                <div id="participantOppOdds" class="text-theme-g-live ml-2">5.10</div>
+              </div>
+              <div id="participant2" class="flex flex-row flex-1 h-11 justify-center items-center">
+                <div id="participantOppName">2</div>
+                <div id="participantOppOdds" class="text-theme-g-live ml-2">1.29</div>
+              </div>
+            </div>
+          </div>
+          <!-- various tables 1 ends -->
+
+          <!-- various tables 2 starts -->
+          <div id="varTable2">
+            <div
+              id="header"
+              class="w-full h-8 bg-theme-cs2 flex flex-row justify-between p-3 items-center text-nowrap"
+            >
+              <div id="headerTitle" class="text-base text-theme-cs1-70 truncate">
+                Various Table 2
+              </div>
+            </div>
+
+            <div
+              id="subHeader"
+              class="flex flex-row h-6 bg-theme-cs1-35 text-sm text-theme-cs1-16 justify-center items-center"
+            >
+              <div id="participant1" class="flex flex-1 justify-center items-center">Chealsea</div>
+              <div id="participantX" class="flex flex-1 justify-center items-center">X</div>
+              <div id="participant2" class="flex flex-1 justify-center items-center">
+                Middlesbrough
+              </div>
+            </div>
+
+            <div
+              id="fixtMarket"
+              class="flex flex-row bg-theme-cs1-16 text-xs text-theme-cs1-70 border-x border-b border-theme-cs1-30 divide-x divide-theme-cs1-30"
+            >
+              <div id="participant1" class="flex flex-col flex-1 h-11 justify-center items-center">
+                <div id="participantOppName">1 & 2+</div>
+                <div id="participantOppOdds" class="text-theme-g-live ml-2">1.55</div>
+              </div>
+              <div id="participantX" class="flex flex-col flex-1 h-11 justify-center items-center">
+                <div id="participantOppName">X & 3+</div>
+                <div id="participantOppOdds" class="text-theme-g-live ml-2">19.30</div>
+              </div>
+              <div id="participant2" class="flex flex-col flex-1 h-11 justify-center items-center">
+                <div id="participantOppName">2 & 3+</div>
+                <div id="participantOppOdds" class="text-theme-g-live ml-2">16.70</div>
+              </div>
+            </div>
+          </div>
+          <!-- various tables 2 ends -->
+
+          <!-- various tables 3 starts -->
+          <div id="varTable3">
+            <div
+              id="header"
+              class="w-full h-8 bg-theme-cs2 flex flex-row justify-between p-3 items-center text-nowrap"
+            >
+              <div id="headerTitle" class="text-base text-theme-cs1-70 truncate">
+                Various Table 3
+              </div>
+            </div>
+
+            <div
+              id="fixtMarket"
+              class="flex flex-row bg-theme-cs1-16 text-sm text-theme-cs1-70 border-x border-b border-theme-cs1-30 divide-x divide-theme-cs1-30"
+            >
+              <div id="participant1" class="flex flex-row flex-1 h-11 justify-center items-center">
+                <div id="participantOppName">Yes & Over 2.5 Goals</div>
+                <div id="participantOppOdds" class="text-theme-g-live ml-2">2.05</div>
+              </div>
+            </div>
+          </div>
+          <!-- various tables 3 ends -->
+
+          <!-- various tables 4 starts -->
+          <div id="varTable4">
+            <div
+              id="header"
+              class="w-full h-8 bg-theme-cs2 flex flex-row justify-between p-3 items-center text-nowrap"
+            >
+              <div id="headerTitle" class="text-base text-theme-cs1-70 truncate">
+                Various Table 4
+              </div>
+            </div>
+
+            <div
+              id="fixtMarket"
+              class="flex flex-row bg-theme-cs1-16 text-sm text-theme-cs1-70 border-x border-b border-theme-cs1-30 divide-x divide-theme-cs1-30"
+            >
+              <div id="participant1" class="flex flex-row flex-1 h-11 justify-center items-center">
+                <div id="participantOppName">Yes</div>
+                <div id="participantOppOdds" class="text-theme-g-live ml-2">1.70</div>
+              </div>
+              <div id="participantX" class="flex flex-row flex-1 h-11 justify-center items-center">
+                <div id="participantOppName">Yes</div>
+                <div id="participantOppOdds" class="text-theme-g-live ml-2">2.05</div>
+              </div>
+            </div>
+          </div>
+          <!-- various tables 4 ends -->
+
+          <!-- various tables 5 starts -->
+          <div id="varTable5">
+            <div
+              id="header"
+              class="w-full h-8 bg-theme-cs2 flex flex-row justify-between p-3 items-center text-nowrap"
+            >
+              <div id="headerTitle" class="text-base text-theme-cs1-70 truncate">
+                Various Table 5
+              </div>
+            </div>
+
+            <div
+              id="subHeader"
+              class="flex flex-row h-6 bg-theme-cs1-35 text-xs text-theme-cs1-16 justify-center items-center"
+            >
+              <div id="participant1" class="flex flex-1 justify-center items-center">Chealsea</div>
+              <div id="participant2" class="flex flex-1 justify-center items-center">
+                Middlesbrough
+              </div>
+            </div>
+
+            <div
+              id="fixtMarket"
+              class="flex flex-row bg-theme-cs1-16 text-sm text-theme-cs1-70 border-x border-b border-theme-cs1-30 divide-x divide-theme-cs1-30"
+            >
+              <div id="participant1" class="flex flex-row flex-1 h-11 justify-center items-center">
+                <div id="participantOppName">1 & Yes</div>
+                <div id="participantOppOdds" class="text-theme-g-live ml-2">2.45</div>
+              </div>
+              <div id="participantX" class="flex flex-row flex-1 h-11 justify-center items-center">
+                <div id="participantOppName">2 & Yes</div>
+                <div id="participantOppOdds" class="text-theme-g-live ml-2">18.20</div>
+              </div>
+            </div>
+          </div>
+          <!-- various tables 5 ends -->
+
+          <!-- various tables 6 starts -->
+          <div id="varTable6">
+            <div
+              id="header"
+              class="w-full h-8 bg-theme-cs2 flex flex-row justify-between p-3 items-center text-nowrap"
+            >
+              <div id="headerTitle" class="text-base text-theme-cs1-70 truncate">
+                Various Table 6
+              </div>
+            </div>
+
+            <div
+              id="fixtMarket"
+              class="flex flex-row bg-theme-cs1-16 text-sm text-theme-cs1-70 border-x border-b border-theme-cs1-30 divide-x divide-theme-cs1-30"
+            >
+              <div
+                id="participant1"
+                class="flex flex-row flex-1 h-11 px-3 justify-start items-center"
+              >
+                <div id="participantOppName">Ronaldo, Cristiano</div>
+                <div id="participantOppOdds" class="text-theme-g-live ml-2">5.70</div>
+              </div>
+            </div>
+          </div>
+          <!-- various tables 6 ends -->
+
+          <!-- in-play categories starts -->
+          <div
+            id="inPlayCategories"
+            class="flex flex-row overflow-x-auto overflow-y-hidden bg-theme-cs1-11 text-theme-cs1-50 text-xxs"
+          >
+            <!-- category soccer -->
+            <div
+              id="inPlayCategorySoccer"
+              class="flex flex-col flex-none justify-between w-fit h-16 ml-1 mr-1"
+            >
+              <div id="catImage" class="flex items-center justify-center">
+                <div
+                  class="w-12 h-10 bg-no-repeat bg-[url('assets/category_icons.png')]"
+                  style="background-position: -3px -179px; background-size: 57px 5300px"
+                ></div>
+              </div>
+              <div id="catLabel" class="flex items-center justify-center h-10">Soccer</div>
+            </div>
+
+            <!-- category virtual soccer -->
+            <div
+              id="inPlayCategoryVirtualSoccer"
+              class="flex flex-col flex-none justify-between w-fit h-14 ml-1 mr-1"
+            >
+              <div id="catImage" class="flex items-center justify-center">
+                <div
+                  class="w-12 h-10 bg-no-repeat bg-[url('assets/category_icons.png')] opacity-50"
+                  style="background-position: -3px -4679px; background-size: 57px 5300px"
+                ></div>
+              </div>
+              <div id="catLabel" class="flex text-center items-center justify-center h-10">
+                Virtual Soccer
+              </div>
+            </div>
+          </div>
+          <!-- in-play categories ends -->
+
+          <!-- category sub page starts -->
+          <div id="categorySubPage" class="flex flex-col bg-theme-cs1-11 text-theme-cs1-70">
+            <div
+              id="categorySubPageHeader"
+              class="flex flex-row items-center h-11 w-full border-b border-theme-cs1-15"
+            >
+              <div
+                class="flex items-center font-symbols w-11 h-11 justify-center text-base text-theme-cs1-35"
+              >
+                arrow_back_ios_new
+              </div>
+              <div
+                id="categorySubPageTitle"
+                class="flex h-full items-center truncate pl-3 pr-3 border-l border-theme-cs1-15"
+              >
+                Soccer
+              </div>
+              <div id="categorySubPageInPlayLink" class="flex flex-1 justify-end pl-3 pr-3">
+                <span class="pl-1.5">Live</span>
+                <span class="pl-1.5 text-theme-g-live">In-Play</span>
+                <span class="pl-1.5">46</span>
+                <span class="font-symbols pl-1.5">arrow_forward_ios</span>
+              </div>
+            </div>
+            <div id="categorySubPageNavBar" class="flex pl-3 overflow-x-none overflow-y-hidden">
+              <div class="relative flex flex-row text-nowrap text-theme-cs1-40 h-11 leading-10">
+                <div class="mr-3">Coupons</div>
+                <div class="mr-3">Outrights</div>
+                <div
+                  id="indicator"
+                  class="absolute bottom-[1px] w-14 left-0 h-1 bg-theme-cs1-35 transition duration-100 ease-in-out"
+                ></div>
+              </div>
+            </div>
+          </div>
+          <!-- category sub page ends -->
+
+          <!-- featured starts -->
+          <div id="featured">
+            <div
+              id="featuredHeader"
+              class="w-full h-8 bg-theme-cs2 flex flex-row justify-between p-3 items-center text-nowrap"
+            >
+              <div id="featuredHeaderTitle" class="text-base text-theme-cs1-70 truncate">
+                UEFA Champions League
+              </div>
+              <div class="text-xs text-theme-cs2-10">Go To Coupon></div>
+            </div>
+
+            <!-- featured fixture starts -->
+            <div id="featuredFixtContainer" class="flex flex-row overflow-x-auto bg-theme-cs1-20">
+              <div
+                id="featuredFixt"
+                class="flex-none w-52 text-theme-cs1-60 border-l border-theme-cs2"
+              >
+                <div id="featuredFixtTeamInfo" class="p-3">
+                  <!-- Competitor 1 Start -->
+                  <div id="featuredTeamCompetitor" class="flex flex-row">
+                    <div id="featuredTeamCompetitorKit" class="mr-3 mb-2">
+                      <img class="w-4 h-auto" src="assets/teamkit_fc_copenhagen.svg" />
+                    </div>
+                    <div id="featuredTeamCompetitorName">FC Copenhagen</div>
+                  </div>
+                  <!-- Competitor 1 Ends -->
+
+                  <!-- Competitor 2 Start -->
+                  <div id="featuredTeamCompetitor" class="flex flex-row">
+                    <div id="featuredTeamCompetitorKit" class="mr-3 mb-2">
+                      <img class="w-4 h-auto" src="assets/teamkit_manchester_city.svg" />
+                    </div>
+                    <div id="featuredTeamCompetitorName">Manchester City</div>
+                  </div>
+                  <!-- Competitor 2 Ends -->
+
+                  <div id="featuredFixtDateTime" class="text-xxs text-theme-cs1-40">
+                    Tuesday 23:00
+                  </div>
+                </div>
+                <div id="featuredFixtMarket" class="flex flex-row text-xs">
+                  <div
+                    id="participant1"
+                    class="flex flex-row flex-1 h-11 bg-theme-cs1-30 justify-center items-center mr-[1px]"
+                  >
+                    <div id="participantOppName">1</div>
+                    <div id="participantOppOdds" class="text-theme-g-live ml-2">8.65</div>
+                  </div>
+                  <div
+                    id="participantX"
+                    class="flex flex-row flex-1 h-11 bg-theme-cs1-30 justify-center items-center mr-[1px]"
+                  >
+                    <div id="participantOppName">X</div>
+                    <div id="participantOppOdds" class="text-theme-g-live ml-2">5.10</div>
+                  </div>
+                  <div
+                    id="participant2"
+                    class="flex flex-row flex-1 h-11 bg-theme-cs1-30 justify-center items-center"
+                  >
+                    <div id="participantOppName">2</div>
+                    <div id="participantOppOdds" class="text-theme-g-live ml-2">1.29</div>
+                  </div>
+                </div>
+              </div>
+              <!-- featured fixture ends  -->
+            </div>
+          </div>
+          <!-- featured ends -->
+
+          <!-- live events starts -->
+          <div id="liveEvents" class="bg-theme-cs1-20">
+            <div
+              id="liveEventsHeader"
+              class="flex flex-row justify-between text-nowrap items-center h-11 p-3 bg-theme-cs2 border-b border-theme-cs2-10"
+            >
+              <div class="flex flex-row items-center">
+                <span class="font-symbols text-xl text-theme-g"> search </span>
+                <div class="text-theme-g text-xl font-semibold mr-2">LIVE</div>
+                <div class="text-theme-g-live text-xl font-semibold">IN-PLAY</div>
+              </div>
+              <div class="text-theme-cs2-10">205 Events ></div>
+            </div>
+
+            <div id="liveEventsTable">
+              <div
+                id="liveEventsTableCategoryHeader"
+                class="flex flex-row w-full items-center text-xs text-theme-cs1-11 h-5 bg-theme-cs1-35"
+              >
+                <div class="w-1/2 pl-3">Soccer</div>
+                <div class="flex flex-1 justify-center">1</div>
+                <div class="flex flex-1 justify-center">X</div>
+                <div class="flex flex-1 justify-center">2</div>
+              </div>
+
+              <!-- live event row starts -->
+              <div
+                id="liveEvent"
+                class="flex flex-row border-b border-theme-cs1-30 bg-theme-cs1-16"
+              >
+                <div
+                  class="flex flex-col w-1/2 bg-theme-cs1-20 text-xs text-theme-cs1-60 p-1 pl-3 pr-3"
+                >
+                  <div id="liveEventTeam1" class="flex flex-row justify-between">
+                    <div>Adana Demirspor</div>
+                    <div class="text-theme-g-live">2</div>
+                  </div>
+                  <div id="liveEventTeam2" class="flex flex-row justify-between">
+                    <div>Erzincan Spor</div>
+                    <div class="text-theme-g-live">1</div>
+                  </div>
+                  <div class="flex flex-row">
+                    <div class="text-xxs text-theme-cs1-40">80:29 14 ></div>
+                    <div
+                      class="w-9 h-4 bg-no-repeat bg-[url('assets/inplay_sprites_stream.svg')]"
+                      style="background-position: -24px -528px"
+                    ></div>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-1 justify-center items-center text-theme-g-live border-r border-theme-cs1-30"
+                >
+                  3.20
+                </div>
+                <div
+                  class="flex flex-1 justify-center items-center text-theme-g-live border-r border-theme-cs1-30"
+                >
+                  1.53
+                </div>
+                <div
+                  class="flex flex-1 justify-center items-center text-theme-g-live border-r border-theme-cs1-30"
+                >
+                  9.0
+                </div>
+              </div>
+              <!-- live event row ends -->
+            </div>
+            <div
+              id="headerHeader"
+              class="flex flex-row justify-between text-nowrap items-center h-11 p-3 z-50 border-t border-theme-cs1-30 text-theme-cs1-60"
+            >
+              <div class="text-sm mr-2">View all In-Play</div>
+              <div class="text-xs">162 Events</div>
+            </div>
+          </div>
+          <!-- live top events ends -->
+
+          <!-- soccer upcoming matches starts -->
+          <div id="soccerUpcomingMatches" class="bg-theme-cs1-20">
+            <div
+              id="soccerUpcomingMatchesHeader"
+              class="flex flex-row justify-between text-nowrap items-center h-11 p-3 bg-theme-cs2 border-b border-theme-cs2-10"
+            >
+              <div class="flex flex-col">
+                <div class="text-theme-cs2-10 text-xs">Soccer</div>
+                <div class="text-theme-cs1-70">Upcoming Matches</div>
+              </div>
+            </div>
+
+            <div id="soccerUpcomMatchesEventTable">
+              <!-- soccer upcoming matches event row starts -->
+              <div
+                id="soccerUpcomMatchesEvent"
+                class="flex flex-row border-b border-theme-cs1-30 bg-theme-cs1-16"
+              >
+                <div
+                  class="flex flex-col w-1/2 bg-theme-cs1-20 text-xs text-theme-cs1-60 p-1 pl-3 pr-3"
+                >
+                  <div>Adana Demirspor</div>
+                  <div>Erzincan Spor</div>
+                  <div class="text-xxs text-theme-cs1-40">80:29 14 > play</div>
+                </div>
+                <div
+                  class="flex flex-1 justify-center items-center text-theme-g-live border-r border-theme-cs1-30"
+                >
+                  3.20
+                </div>
+                <div
+                  class="flex flex-1 justify-center items-center text-theme-g-live border-r border-theme-cs1-30"
+                >
+                  1.53
+                </div>
+                <div
+                  class="flex flex-1 justify-center items-center text-theme-g-live border-r border-theme-cs1-30"
+                >
+                  9.0
+                </div>
+              </div>
+              <!-- soccer upcoming matches event row ends -->
+            </div>
+          </div>
+          <!-- soccer upcoming matches ends -->
+
+          <!-- top coupons starts -->
+          <div id="topCoupons" class="flex flex-col">
+            <div
+              id="topCouponsHeader"
+              class="flex w-full items-center h-8 border-b border-theme-cs1-30 bg-theme-cs2 p-3 text-sm text-theme-cs1-70 truncate"
+            >
+              Top Coupons
+            </div>
+            <div
+              id="topCouponsLeague"
+              class="flex flex-row h-11 items-center text-theme-cs1-40 bg-theme-cs1-20 border-b border-theme-cs1-30"
+            >
+              <div class="flex pl-3">
+                <div
+                  class="w-6 h-6 bg-no-repeat bg-[url('assets/category_icons.png')]"
+                  style="background-position: -1px -86px; background-size: 28px 2604px"
+                ></div>
+              </div>
+              <div class="flex flex-row w-full justify-between items-center ml-3 mr-3">
+                <div>Portugal Liga Portugal</div>
+                <div>></div>
+              </div>
+            </div>
+          </div>
+          <!-- top coupons ends -->
+
+          <!-- virtual games starts -->
+          <div id="virtualGames">
+            <div
+              id="virtualGamesHeader"
+              class="flex w-full items-center h-8 border-b border-theme-cs1-30 bg-theme-cs2 p-3 text-sm text-theme-cs1-70 truncate"
+            >
+              Virtual Games
+            </div>
+
+            <div
+              id="virtualGamesContainer"
+              class="flex flex-row overflow-x-auto bg-theme-cs1-20 text-theme-cs1-50 text-xxs"
+            >
+              <!-- category soccer -->
+              <div
+                id="virtualGame"
+                class="flex flex-col flex-none justify-between border-r border-theme-cs1-30"
+              >
+                <div id="gameImage" class="flex grow items-center justify-center h-28">
+                  <img class="w-auto" src="assets/virtual_games_virtual_soccer.jpg" />
+                </div>
+                <div id="gameLabel" class="flex items-center justify-center h-8 leading-tight">
+                  Soccer
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- virtual games ends -->
+
+          <!-- footer starts -->
+          <div id="footer" class="flex flex-col">
+            <div
+              class="flex rounded h-8 m-3 justify-center items-center bg-theme-cs1-15 text-theme-cs1-40 scroll-smooth select-none shadow-md"
+              onclick="topFunction()"
+            >
+              Back to Top
+            </div>
+
+            <div class="flex h-11 w-full justify-center items-center">
+              <img src="assets/logo_white.svg" />
+            </div>
+
+            <div class="flex flex-col justify-center items-center">
+              <div class="w-full pt-3.5 pr-[15%] pl-[15%] pb-2">
+                <select
+                  id="languageSelection"
+                  class="w-full h-11 rounded-md p-2 text-theme-cs1-15 text-base bg-theme-cs1-50 appearance-none outline-none bg-no-repeat bg-right bg-[url('assets/dropdown_mobile.svg')]"
+                >
+                  <option value="1" selected="selected">English</option>
+                  <option value="2">Shqip</option>
+                  <option value="3">Português</option>
+                  <option value="5">Македонски јазик</option>
+                  <option value="6">Italiano</option>
+                  <option value="7">Deutch</option>
+                  <option value="8">Ελληνικά</option>
+                  <option value="9">Français</option>
+                  <option value="10">Español</option>
+                  <option value="11">Crnogorski</option>
+                  <option value="12">Srpski</option>
+                  <option value="13">Türkçe</option>
+                  <option value="14">Česky</option>
+                  <option value="15">Nenderland</option>
+                  <option value="16">Slovenski</option>
+                </select>
+              </div>
+
+              <div class="w-full pt-3.5 pr-[15%] pl-[15%] pb-2">
+                <select
+                  id="moneyStyle"
+                  class="w-full h-11 rounded-md p-2 text-theme-cs1-15 text-base bg-theme-cs1-50 appearance-none outline-none bg-no-repeat bg-right bg-[url('assets/dropdown_mobile.svg')]"
+                >
+                  <option value="Decimal">Decimal</option>
+                  <option value="Fractional">Fractional</option>
+                  <option value="American">American</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="text-center text-theme-cs1-60 text-md pt-1.5 pb-1.5 select-none">
+              <div class="inline-block py-1 px-2.5">Terms and Conditions</div>
+              <div class="inline-block py-1 px-2.5">Responsible Gambling</div>
+              <div class="inline-block py-1 px-2.5">Privacy Policy</div>
+            </div>
+
+            <div class="p-3 text-center text-theme-cs1-40 text-xxxs">
+              By accessing, continuing to use or navigating throughout this site you accept that we
+              will use certain browser cookies to improve your customer experience with us. Our site
+              only uses cookies which will improve your experience with us and will not interfere
+              with your privacy. Please refer to our Cookies Policy for further information on our
+              use of cookies and how you can disable or manage their use should you wish.
+            </div>
+            <div class="p-3 text-center text-theme-cs1-40 text-xxxs">
+              Gambling can be addictive, please play responsibly. For information on support
+              measures, please visit our Responsible Gambling Help page.
+            </div>
+            <div class="p-3 text-center text-theme-cs1-40 text-xxxs">
+              © 2016-2024. All rights reserved.
+            </div>
+          </div>
+          <!-- footer ends -->
+
+          <!-- join form starts -->
+          <div id="joinForm" class="flex flex-col p-3 text-theme-cs1-11">
+            <fieldset data-section="user" class="pt-2 pb-2">
+              <div class="flex flex-col">
+                <div>
+                  <input
+                    id="username"
+                    class="placeholder:italic placeholder:text-theme-cs1-30 bg-theme-g w-full h-11 border-t border-b border-theme-cs1-30 rounded-t-md py-2 pl-3 pr-3 outline-none"
+                    placeholder="Username"
+                  />
+                </div>
+                <div>
+                  <input
+                    id="password"
+                    class="placeholder:italic placeholder:text-theme-cs1-30 bg-theme-g w-full h-11 border-b border-theme-cs1-30 rounded-b-md py-2 pl-3 pr-3 outline-none"
+                    placeholder="Password"
+                  />
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset data-section="name" class="pt-2 pb-2">
+              <div class="flex flex-col">
+                <div>
+                  <input
+                    id="firstname"
+                    class="placeholder:italic placeholder:text-theme-cs1-30 bg-theme-g w-full h-11 border-t border-b border-theme-cs1-30 rounded-t-md py-2 pl-3 pr-3 outline-none"
+                    placeholder="First Name"
+                  />
+                </div>
+                <div>
+                  <input
+                    id="surname"
+                    class="placeholder:italic placeholder:text-theme-cs1-30 bg-theme-g w-full h-11 border-b border-theme-cs1-30 rounded-b-md py-2 pl-3 pr-3 outline-none"
+                    placeholder="Surname"
+                  />
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset data-section="moneyType">
+              <div class="w-full pt-2 pb-2">
+                <select
+                  id="moneyTypes"
+                  class="w-full h-11 rounded-md p-2 text-theme-cs1-15 text-sm bg-theme-cs1-50 appearance-none outline-none bg-no-repeat bg-right bg-[url('assets/dropdown_mobile.svg')]"
+                >
+                  <option value="1">LEK</option>
+                  <option value="2" selected="">EURO</option>
+                </select>
+              </div>
+            </fieldset>
+
+            <fieldset data-section="agent" class="pt-2 pb-2">
+              <div>
+                <input
+                  id="agentId"
+                  class="placeholder:italic placeholder:text-theme-cs1-30 bg-theme-g w-full h-11 border-t border-b border-theme-cs1-30 rounded-md py-2 pl-3 pr-3 outline-none"
+                  placeholder="Agent ID"
+                />
+              </div>
+            </fieldset>
+
+            <div class="text-center text-theme-cs1-40">Solve: 4 + 8</div>
+            <fieldset data-section="captcha" class="pt-2 pb-2">
+              <div>
+                <input
+                  id="captchaId"
+                  class="placeholder:italic placeholder:text-theme-cs1-30 bg-theme-g w-full h-11 border-t border-b border-theme-cs1-30 rounded-md py-2 pl-3 pr-3 outline-none"
+                  placeholder="Captcha"
+                />
+              </div>
+            </fieldset>
+
+            <div class="pt-3 pb-3">
+              <button
+                class="w-full px-4 py-2 text-sm border border-theme-cs2-10 bg-theme-cs2 text-theme-cs1-70 rounded-md shadow-sm"
+              >
+                Register
+              </button>
+            </div>
+          </div>
+          <!-- join form ends -->
+        </div>
+      </div>
+
+      <!-- sidebar starts -->
+      <div
+        id="sidebar"
+        class="fixed flex flex-col h-screen inset-y-0 left-0 w-4/5 bg-theme-cs1-10 opacity-0 -translate-x-full transition duration-500"
+      >
+        <div id="sidebarHeader" class="flex-shrink-0">
+          <div
+            id="sidebarSearch"
+            class="flex flex-row h-11 border-b-2 border-theme-cs1-15 text-theme-cs1-20"
+          >
+            <div id="searchIcon" class="flex text-2xl justify-center items-center w-10 h-11">
+              <span class="font-symbols">search</span>
+            </div>
+            <div id="searchInput" class="flex flex-1 pl-3 text-lg items-center">Search</div>
+          </div>
+          <div
+            id="sidebarHeaderNavBar"
+            class="flex flex-row w-full pb-2 mt-1 border-b border-theme-cs1-15"
+          >
+            <div id="sports" class="flex flex-col flex-1 justify-center items-center">
+              <div>
+                <div
+                  class="w-10 h-8 bg-no-repeat bg-[url('assets/sidebar_sprites.svg')]"
+                  style="background-position: -69px -3px"
+                ></div>
+              </div>
+              <div class="text-theme-cs2-10">Sports</div>
+            </div>
+            <div id="inPlay" class="flex flex-col flex-1 justify-center items-center">
+              <div>
+                <div
+                  class="w-10 h-8 bg-no-repeat bg-[url('assets/sidebar_sprites.svg')]"
+                  style="background-position: -143px -3px"
+                ></div>
+              </div>
+              <div class="text-theme-cs1-40">In-Play</div>
+            </div>
+            <div id="gaming" class="flex flex-col flex-1 justify-center items-center">
+              <div>
+                <div
+                  class="w-10 h-8 bg-no-repeat bg-[url('assets/sidebar_sprites.svg')]"
+                  style="background-position: -305px -3px"
+                ></div>
+              </div>
+              <div class="text-theme-cs1-40">Gaming</div>
+            </div>
+            <div id="offers" class="flex flex-col flex-1 justify-center items-center">
+              <div>
+                <div
+                  class="w-10 h-8 bg-no-repeat bg-[url('assets/sidebar_sprites.svg')]"
+                  style="background-position: -477px -3px"
+                ></div>
+              </div>
+              <div class="text-theme-cs1-40">Offers</div>
+            </div>
+          </div>
+        </div>
+        <div id="sidebarMenu" class="flex-grow h-fit overflow-y-auto">
+          <div id="sidebarCategoriesGroup">
+            <div
+              id="sidebarCategoryItemHome"
+              class="flex flex-row justify-between items-center h-11 pl-3 pr-3 bg-theme-cs1-11 border-b border-theme-cs1-15"
+            >
+              <div id="sidebarCategoryName" class="truncate text-base text-theme-cs1-70">Home</div>
+              <div id="sidebarCategoryHome"><img src="assets/home_active.svg" /></div>
+            </div>
+            <div
+              id="sidebarCategoryItem"
+              class="flex flex-row justify-between items-center h-11 pl-3 pr-3 border-b border-theme-cs1-15"
+            >
+              <div id="sidebarCategoryName" class="truncate text-theme-cs1-35">Soccer</div>
+              <div
+                id="sidebarCategoryFav"
+                class="w-11 h-11 bg-no-repeat bg-[url('assets/star_sprite.svg')]"
+                style="background-position: 6px -54px"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- sidebar ends -->
+    </div>
+
+    <!-- site search starts-->
+    <div id="siteSearchCont" class="hidden">
+      <div
+        id="siteSearch"
+        class="flex flex-col absolute top-0 bottom-0 left-0 right-0 z-10 bg-theme-cs1-10"
+      >
+        <div id="siteSearchHeader">
+          <div
+            class="flex flex-row h-11 border-b-2 border-theme-cs2-10 text-theme-cs2-10 bg-theme-cs2"
+          >
+            <div id="siteSearchIcon" class="flex text-2xl justify-center items-center w-10 h-11">
+              <span class="font-symbols">search</span>
+            </div>
+            <input
+              placeholder="Search"
+              class="flex flex-1 pl-3 placeholder:text-theme-cs2-10 text-theme-cs1-60 text-lg items-center bg-theme-cs2 outline-none"
+            />
+            <div
+              id="siteSearchCloseBut"
+              class="flex text-xxs text-theme-g justify-center items-center p-3"
+            >
+              Close
+            </div>
+          </div>
+        </div>
+        <div id="siteSearchResults">
+          <div
+            class="pt-10 pb-4 ml-6 mr-6 border-b border-b-theme-cs1-30 text-xs text-theme-cs1-30"
+          >
+            RECENT SEARCHES
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- site search ends-->
+
+    <!-- bet slip starts -->
+    <div
+      id="betSlip"
+      class="fixed w-full bottom-0 left-0 right-0 bg-theme-cs1-10 translate-y-full transition-transform duration-300 ease-in-out"
+    >
+      <div
+        id="betSlipHeader"
+        class="flex w-full justify-between bg-theme-cs1-70 text-theme-cs1-11 border-t border-b border-theme-cs1-40"
+      >
+        <div class="flex justify-center items-center p-3">
+          <div
+            id="betSlipCount"
+            class="flex items-center justify-center bg-theme-cs2 text-theme-g w-6 h-6 rounded-full"
+          >
+            2
+          </div>
+        </div>
+        <div id="betSlipTitle" class="flex flex-1 text-base justify-start items-center">
+          <span>Bet Slip</span>
+        </div>
+        <div id="betSlipCoef" class="flex flex-1 text-base justify-center items-center">
+          <span>1.70</span>
+        </div>
+        <div id="betSlipBalance" class="flex text-base w-[20%] justify-start items-center">
+          <div id="balance">9.14</div>
+          <div id="balanceISO">EUR</div>
+        </div>
+        <div
+          id="betSlipCloseBut"
+          class="flex w-14 h-14 justify-center items-center font-symbols text-xl text-theme-cs1-15 border border-l-theme-cs1-40"
+        >
+          close
+        </div>
+      </div>
+      <div
+        id="betSlipItemsContainer"
+        class="flex flex-col w-full text-theme-cs1-11 bg-theme-cs1-60"
+      >
+        <div id="betSlipItem" class="flex flex-col py-1 p-3 border-t border-b border-theme-cs1-40">
+          <div id="fixture" class="text-sm">PSG - Real Sociedad San Sebastian</div>
+          <div id="coef" class="flex flex-row justify-between items-center w-full text-xs">
+            <div>Full Time Result (1)</div>
+            <div class="text-sm">1.70</div>
+          </div>
+        </div>
+      </div>
+      <div id="betSlipActions" class="flex flex-row h-12">
+        <div
+          class="flex flex-1 justify-center items-center text-lg text-theme-cs2-10 bg-theme-cs1-11"
+        >
+          Stake
+        </div>
+        <div
+          class="flex flex-1 justify-center items-center text-lg text-theme-cs1-40 bg-theme-cs1-16"
+        >
+          Place Bet
+        </div>
+      </div>
+      <div
+        id="keyPad"
+        class="grid grid-cols-3 font-verdana font-thin text-center items-center bg-theme-cs1-60 leading-10 text-3xl text-theme-cs1-20 divide divide-x divide-y divide-theme-cs1-40"
+      >
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>.</div>
+        <div>0</div>
+        <div class="font-symbols">backspace</div>
+      </div>
+    </div>
+    <!-- bet slip ends -->
+  </body>
+</html>
